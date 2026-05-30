@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Demonstration Tools</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --accent:#3b82f6;
+    --accent2:#06b6d4;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(135deg,#020617,#0f172a,#111827);
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(59,130,246,.25),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(6,182,212,.18),transparent 30%);
+    animation:moveGlow 10s infinite alternate ease-in-out;
+    pointer-events:none;
+}
+
+@keyframes moveGlow{
+    from{transform:translateY(-20px);}
+    to{transform:translateY(20px);}
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.hero{
+    text-align:center;
+    padding:80px 20px 50px;
+    animation:fadeUp 1s ease;
+}
+
+.hero h1{
+    font-size:clamp(2.2rem,6vw,4rem);
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.hero p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:1.7;
+    font-size:1.05rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    margin-top:50px;
+}
+
+.card{
+    background:rgba(30,41,59,.75);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.35s ease;
+    animation:fadeUp 1s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+    box-shadow:0 20px 50px rgba(59,130,246,.25);
+}
+
+.image-placeholder{
+    height:220px;
+    background:
+        linear-gradient(135deg,#3b82f6,#06b6d4);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:1rem;
+    letter-spacing:1px;
+}
+
+.image-placeholder img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:24px;
+}
+
+.card-content h3{
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.card-content p{
+    color:var(--muted);
+    line-height:1.6;
+    margin-bottom:22px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    color:white;
+    padding:14px 24px;
+    border-radius:14px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 30px rgba(59,130,246,.4);
+}
+
+.footer{
+    text-align:center;
+    padding:50px 20px 30px;
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <section class="hero">
+        <h1>Online Demonstration Tools</h1>
+        <p>
+            A collection of tested online tools provided exclusively for
+            demonstration, evaluation, and educational purposes.
+            Explore available resources through a modern and responsive interface.
+        </p>
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+
+            <div class="image-placeholder">
+                <!-- Replace with your image -->
+                <img src="images/tool-preview.jpg" alt="Tool Preview"
+                     onerror="this.parentNode.innerHTML='IMAGE PREVIEW';">
+            </div>
+
+            <div class="card-content">
+                <h3>Stable Xuper v4</h3>
+
+                <p>
+                    Tested demonstration package available for download.
+                    Intended for evaluation and showcase purposes only.
+                </p>
+
+                <a href="/tools/stable_xuperv4.apk" class="btn">
+                    Download APK
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+        © 2026 Online Demonstration Tools. All resources are provided for testing and demonstration purposes.
+    </div>
+
+</div>
+
+</body>
+</html>
